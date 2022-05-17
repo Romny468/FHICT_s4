@@ -21,6 +21,14 @@ if (strpos(strtolower($rawdata), "iphone")) {
 	$mob = $mob . "device: iPad<br>";
 } elseif (strpos(strtolower($rawdata), "samsung")) {
 	$mob = $mob . "device: Samsung<br>";
+} elseif (strpos(strtolower($rawdata), "pixel")) {
+	$mob = $mob . "device: Google phone<br>";
+} elseif (strpos(strtolower($rawdata), "sm-g")) {
+	$mob = $mob . "device: Samsung Galaxy phone<br>";
+} elseif (strpos(strtolower($rawdata), "sm-t")) {
+	$mob = $mob . "device: Samsung tablet<br>";
+} elseif (strpos(strtolower($rawdata), "sm-a")) {
+	$mob = $mob . "device: Samsung Galaxy A-series<br>";
 }
 
 
@@ -112,7 +120,7 @@ $browser = "browser: " . $ua['name'] . "<br>";
 $log = "$date $time <br> $platform $browser $ip $mob <br>raw data: $rawdata<br><br><br><br>";
 //echo "<br>",$log; // test
 
-$ip_array = array('213.125.137.254', '10.1.32.70', '10.1.32.71');
+$ip_array = array('213.125.137.254', '10.1.32.70', '10.1.32.71', '10.1.32.108');
 $file = "../logs/infofile.txt";
 $ip2 = $_SERVER['HTTP_X_FORWARDED_FOR'];
 if (!in_array($ip2, $ip_array)) {
@@ -135,107 +143,109 @@ if (!in_array($ip2, $ip_array)) {
     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <div class="left_Side">
-            <div class="profileText">
-                <div class="imgBx">
-                    <img src="Persona pic.png">
-                </div>
-                <h2>Niels van den Berg <br> <span>Pharmacist/Pharmacy Manager</span></h2>
-             </div>
-             <div class="contactInfo">
-                 <h3 class="title">Contact Info</h3>
-                 <ul>
-                     <li>
-                         <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                         <span class="text"> +31 0629135437</span>
-                     </li>
-                     <li>
-                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                        <span class="text"> Dr.Niels0@gmail.com</span>
-                    </li>
-                    <li>
-                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
-                        <span class="text"> Eindhoven, Noord Brabant, Netherlands</span>
-                    </li>
-                    <li>
-                        <span class="icon"><i class="fa fa-university" aria-hidden="true"></i></span>
-                        <span class="text"> Dutch, English, German </span>
-                    </li>
-                    <li>
-                        <span class="icon"><i class="fa fa-car" aria-hidden="true"></i></span>
-                        <span class="text"> B <br> In possession of a car </span>
-                    </li>
-                 </ul>
-             </div>
+	<div class="container">
+		<div class="left_Side">
+			<div class="profileText">
+				<div class="imgBx">
+					<img src="Persona pic.png">
+				</div>
+				<br><h2 style="font-size:140%">Niels van den Berg <br><span style="font-size:80%">Pharmacist</span></h2>
+			</div>
+		  <div class="contactInfo">
+				<h3 class="title">Personalia</h3>
+				<table style="padding-left: 5%;">
+					<colgroup>
+						<col style="width: 127px">
+						<col style="width: 500px">
+					</colgroup>
+					<tr valign="top">
+						<td><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span></td>
+						<td style="padding-left:2%;">+31 6 29135437</td>
+					</tr>
+					<tr valign="top">
+						<td><span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span></td>
+						<td style="padding-left:2%;">Dr.Niels0@gmail.com</td>
+					</tr>
+					<tr valign="top">
+						<td><span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span></td>
+						<td style="padding-left:2%;">Eindhoven, Noord Brabant, Netherlands</td>
+					</tr>
+					<tr valign="top">
+						<td><span class="icon"><i class="fa fa-university" aria-hidden="true"></i></span></td>
+						<td style="padding-left:2%;">Dutch, English, German</td>
+					</tr>
+					<tr valign="top">
+						<td><span class="icon"><i class="fa fa-car" aria-hidden="true"></i></span></td>
+						<td style="padding-left:2%;">B, in possession of a car</td>
+					</tr>
+				</table>
+				<h3 class="title">Talents & characteristics</h3>
+				<ul style="color: #eee";>
+					<li>Team leader</li>
+					<li>Motivated</li>
+					<li>Independent</li>
+					<li>Eager to learn</li>
+				</ul>
+			</div>
+		</div> <!--CLoses the left side-->
+	
 
+		<div class="right_Side">
+			<div class="about"><br>
+				<h2 class="title2">About me</h2>
+				<p>Skilled pharmacist with exceptional organization skills, strong interpersonal communication ability, and extensive knowledge of medications and their use. I place a strong 
+				focus on attention to detail. Dedicated professional ensures that all safety protocols and security measures are adhered to in meeting the high standards of the field.<br>
+				<br> In my spare time I read a lot and partake in Archery along with my wife, and Tennis along with my two kids.</p>
+				<br>
+								
+				<h2 class="title2">Education</h2>
+				<table style="padding-left: 5%">
+					<colgroup>
+						<col style="width: 127px">
+						<col style="width: 500px">
+					</colgroup>
+					<tr valign="top">
+						<td>2008-2010</td>
+						<td>Master Degree in Medical Pharmaceutical Science<br>Univeristy of Groningen</td>
+					</tr>
+					<tr valign="top">
+						<td>2005-2008</td>
+						<td>Bachelor Degree in Pharmacy<br>Univeristy of Groningen</td>
+					</tr>
+				</table><br>
+				
+				<h2 class="title2">Experience</h2>
+				<table style="padding-left: 5%">
+					<colgroup>
+						<col style="width: 150px">
+						<col style="width: 500px">
+					</colgroup>
+					<tr valign="top">
+						<td>2016 - 2022</td>
+						<td>Univeristy Medical Center Groningen<br>Pharmacist</td>
+					</tr>
+					<tr valign="top">
+						<td>2013 - 2016</td>
+						<td>Univeristy Medical Center Groningen<br>Pharmacist</td>
+					</tr>
+					<tr valign="top">
+						<td>2012 - 2013</td>
+						<td>Univeristy Medical Center Groningen<br>Pharmacy Aide</td>
+					</tr>
+				</table><br>
 
-             <div class="contactInfo education">
-                <h2 class="title2">Education</h2>				
+				<h2 class="title2">Professional Skills</h2>
 				<ul>
-                    <li>
-                        
-                        <h5>2008-2010</h5>
-                        <h4>Master Degree in Medical Pharmaceutical Science</h4>
-                        <h4>Univeristy of Groningen</h4>
-                    </li>
-                    <li>
-                        <h5>2005-2008</h5>
-                        <h4>Bachelor Degree in Pharmacy</h4>
-                        <h4>Univeristy of Groningen</h4>
-                    </li>
-                </ul>
-            </div>
-
-        </div> <!--CLoses the left side-->
-
-
-
-        <div class="right_Side">
-    <div class="about">
-        <h2 class="titel2">About me</h2>
-        <p>Skilled pharmacist with exceptional organization skills, strong interpersonal communication ability, and extensive knowledge of medications and their use. I place a strong 
-        focus on attention to detail. Dedicated professional ensures that all safety protocols and security measures are adhered to in meeting the high standards of the field.<br>
-        <br> In my spare time I read a lot and partake in Archery along with my wife, and Tennis along with my two kids.</p>
-
-    </div>
-
-    <div class="about";>
-        <h2 class="titel2">Experience</h2>
-		<table style="padding-left: 5%">
-		<colgroup>
-			<col style="width: 173px">
-			<col style="width: 500px">
-		</colgroup>
-		<tr valign="top">
-			<td>2016 - 2022</td>
-			<td>Univeristy Medical Center Groningen<br>Pharmacist</td>
-		</tr>
-		<tr valign="top">
-			<td>2013 - 2016</td>
-			<td>Univeristy Medical Center Groningen<br>Pharmacist</td>
-		</tr>
-		<tr valign="top">
-			<td>2012 - 2013</td>
-			<td>Univeristy Medical Center Groningen<br>Pharmacy Aide</td>
-		</tr>
-	</table>
-
-    <div class="about skills">
-        <h2 class="title2">Professional Skills</h2>
-<ul>
-    <li>Excellent communication and active listening skills to ensure that patients and customers understand their medications and how to take them.</li>
-    <li>Extensive education and training to guarantee that I am constantly up to date on the newest research and information regarding medications.</li>
-    <li>Ability to hear and understand what others are saying, and oral expression skills that allow me to explain a complicated topic in a simple way that they can understand.</li>
-    <li>Strong sensitivity to problems that may arise when issues with prescribers, patients or drug companies are present.</li>
-    <li>Intense focus and attention to detail to minimize mistakes and unnecessary expenses for both the drug companies and the pharmacy.</li>
-    <li>Exceptional social perception, facilitating the understanding of concerns and issues of both patients and prescribers as they arise.</li>
-    <li>Instructing skills that allow me to teach others how to do things better rather than just doing jobs for them.</li>
-</ul>
-    </div>
-
-    </div> <!--Closes the right side-->
-    
-    </div><!--Closes the body-->
-</body>
+						<li>Excellent communication and active listening skills to ensure that patients and customers understand their medications and how to take them.</li>
+						<li>Extensive education and training to guarantee that I am constantly up to date on the newest research and information regarding medications.</li>
+						<li>Ability to hear and understand what others are saying, and oral expression skills that allow me to explain a complicated topic in a simple way that they can understand.</li>
+						<li>Strong sensitivity to problems that may arise when issues with prescribers, patients or drug companies are present.</li>
+						<li>Intense focus and attention to detail to minimize mistakes and unnecessary expenses for both the drug companies and the pharmacy.</li>
+						<li>Exceptional social perception, facilitating the understanding of concerns and issues of both patients and prescribers as they arise.</li>
+						<li>Instructing skills that allow me to teach others how to do things better rather than just doing jobs for them.</li>
+				</ul><br>
+			</div> <!--Closes the right side-->
+		</div>
+	</div>
+</body><!--Closes the body-->
 </html>
