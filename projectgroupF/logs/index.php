@@ -10,11 +10,21 @@
 
 <div class="logocentered">
   <a href="https://www.naelys.nl/"><img src="../media/logo/Naelys(brush strokes.w).png" alt="naelys.nl logo"></a>
-</div><br><br><br><br><br>
+</div><br><br>
 
-<div class="spacing2"> 
+<div class="spacing2"><br><br><br>
+
 <?php
-$file = "infofile.txt";
-echo "<p><br><br>",file_get_contents($file),"</p>";
+$filename = "infofile.txt";
+$file = fopen($filename, "r");
+$content = htmlspecialchars(fread($file,filesize($filename)), ENT_COMPAT);
+$content2 = nl2br($content);
+//echo $content2; //test echo before makeing it humanly readable
+//echo "<br><br><br><br><br><br>"; //spacing for test echo and result
+
+// make it look humanly readable
+$content3 = str_replace("///", "<br>", $content2);
+$content3 = str_replace("??", "<b>", $content3);
+echo str_replace("!!", "</b>", $content3);
 ?>
 </div>
