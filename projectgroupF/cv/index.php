@@ -11,29 +11,29 @@
 $rawdata = $_SERVER["HTTP_USER_AGENT"];
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 if ($isMob) {
-	$mob = "devicetype: mobile <br>";
-} else {$mob = "devicetype: laptop/desktop <br>";}
+	$mob = "devicetype: mobile";
+} else {$mob = "devicetype: laptop/desktop";}
 
 
 if (strpos(strtolower($rawdata), "iphone")) {
-	$mob = $mob . "device: iPhone<br>";
+	$mob = $mob . " device: iPhone";
 } elseif (strpos(strtolower($rawdata), "ipad")) {
-	$mob = $mob . "device: iPad<br>";
+	$mob = $mob . " device: iPad";
 } elseif (strpos(strtolower($rawdata), "samsung")) {
-	$mob = $mob . "device: Samsung<br>";
+	$mob = $mob . " device: Samsung";
 } elseif (strpos(strtolower($rawdata), "pixel")) {
-	$mob = $mob . "device: Google phone<br>";
+	$mob = $mob . " device: Google phone";
 } elseif (strpos(strtolower($rawdata), "sm-g")) {
-	$mob = $mob . "device: Samsung Galaxy phone<br>";
+	$mob = $mob . " device: Samsung Galaxy phone";
 } elseif (strpos(strtolower($rawdata), "sm-t")) {
-	$mob = $mob . "device: Samsung tablet<br>";
+	$mob = $mob . " device: Samsung tablet";
 } elseif (strpos(strtolower($rawdata), "sm-a")) {
-	$mob = $mob . "device: Samsung Galaxy A-series<br>";
+	$mob = $mob . " device: Samsung Galaxy A-series";
 }
 
 
 //get info
-$ip = "ip-address: " . $_SERVER['HTTP_X_FORWARDED_FOR'] . "<br>";
+$ip = "ip-address: " . $_SERVER['HTTP_X_FORWARDED_FOR'];
 $time = date('H:i:s');
 $date = date('d-m-Y');
 
@@ -113,11 +113,11 @@ function getBrowser() {
 // now try it
 $ua=getBrowser();
 $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
-$platform = "platform: " .$ua['platform'] . "<br>";
-$browser = "browser: " . $ua['name'] . "<br>";
+$platform = "platform: " .$ua['platform'];
+$browser = "browser: " . $ua['name'];
 
 // create log with information
-$log = "$date $time <br> $platform $browser $ip $mob <br>raw data: $rawdata<br><br><br><br>";
+$log = "??$date $time!! ///$platform ///$browser ///$ip ///$mob ///raw data: $rawdata";
 //echo "<br>",$log; // test
 
 $ip_array = array('213.125.137.254', '10.1.32.70', '10.1.32.71', '10.1.32.108');
@@ -126,7 +126,7 @@ $ip2 = $_SERVER['HTTP_X_FORWARDED_FOR'];
 if (!in_array($ip2, $ip_array)) {
 	if (file_exists($file) == FALSE) {echo "The file does not exist";} else {
 		$myfile = fopen($file, "a") or die("Unable to open file!");
-		fwrite($myfile, $log."\n");
+		fwrite($myfile, $log."\n\n");
 		fclose($myfile);
 	}
 } else { echo "<p style='padding-left: 17%'><mark>The data will not be saved as this is a test IP address</mark></p>"; }
