@@ -16,19 +16,19 @@ if ($isMob) {
 
 
 if (strpos(strtolower($rawdata), "iphone")) {
-	$mob = $mob . " device: iPhone";
+	$mob = $mob . " ///device: iPhone";
 } elseif (strpos(strtolower($rawdata), "ipad")) {
-	$mob = $mob . " device: iPad";
+	$mob = $mob . " ///device: iPad";
 } elseif (strpos(strtolower($rawdata), "samsung")) {
-	$mob = $mob . " device: Samsung";
+	$mob = $mob . " ///device: Samsung";
 } elseif (strpos(strtolower($rawdata), "pixel")) {
-	$mob = $mob . " device: Google phone";
+	$mob = $mob . " ///device: Google phone";
 } elseif (strpos(strtolower($rawdata), "sm-g")) {
-	$mob = $mob . " device: Samsung Galaxy phone";
+	$mob = $mob . " ///device: Samsung Galaxy phone";
 } elseif (strpos(strtolower($rawdata), "sm-t")) {
-	$mob = $mob . " device: Samsung tablet";
+	$mob = $mob . " ///device: Samsung tablet";
 } elseif (strpos(strtolower($rawdata), "sm-a")) {
-	$mob = $mob . " device: Samsung Galaxy A-series";
+	$mob = $mob . " ///device: Samsung Galaxy A-series";
 }
 
 
