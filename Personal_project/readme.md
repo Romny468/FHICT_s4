@@ -1,4 +1,8 @@
 # This script will encrypt every file within the directory the script is located
 
 ## v1
-barely working encrypting and decrypting programs
+Barely working encrypting and decrypting programs
+
+## v2
+Key will be encrypted 5 times before it is stored.
+Password is needed before files are decrypted. If password is entered 3 times incorrectly, program will end. 
