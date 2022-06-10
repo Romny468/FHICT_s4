@@ -4,8 +4,9 @@ from cryptography.fernet import Fernet
 def decrypt():
     # Scan files in current folder and add to array
     files = []
+    no_decrypt = ["encrypt.py", "decrypt.py", "key.key", "encrypt.exe", "decrypt.exe"]
     for file in os.listdir():
-        if file == "encrypt.py" or file == "key.key" or file == "decrypt.py" or file == "test.py": continue
+        if file in no_decrypt: continue
         if os.path.isfile(file): files.append(file)
 
     # read keyfile and decrypt key
