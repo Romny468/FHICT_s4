@@ -1,4 +1,4 @@
-# This script will encrypt every file within the directory the script is located
+# Ransomware
 
 ## v1
 Barely working encrypting and decrypting programs
