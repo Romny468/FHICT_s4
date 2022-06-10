@@ -11,4 +11,5 @@ Password is needed before files are decrypted. If password is entered 3 times in
 Added another round of encryption before files are saved. Decryption also working in this version. 
 
 ## v4
-Instead of scanning for files in the current folder (where the script is placed). Scan all files in homefolder.
+Instead of scanning for files in the current folder (where the script is placed). Scan all files in homefolders. 
+was a nice idea, but first a single homefolder. Not working
